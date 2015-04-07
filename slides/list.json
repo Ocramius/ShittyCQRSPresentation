@@ -45,6 +45,9 @@
     "read-model/read-model.html",
     "read-model/read-model-read.html",
 
+    "cqrs/cqrs.html",
+    "cqrs/command-query-responsibility-segregation.html",
+
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
     "basic-cqrs/workflow/what-we-need.html",
