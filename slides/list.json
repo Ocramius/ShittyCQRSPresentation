@@ -50,6 +50,9 @@
     "cqrs/example/contract-controller.html",
     "cqrs/example/contract-command-handler.html",
 
+    "more/cqrs-has-more.html",
+    "more/i-like-the-explicit-intent.html",
+
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
     "basic-cqrs/workflow/what-we-need.html",
