@@ -1,9 +1,12 @@
 [
     "introduction/kittens.html",
-
     "introduction/i-am-marco.html",
-
     "introduction/i-work-for.html",
+
+    "final-classes/final-classes.html",
+    "final-classes/there-is-a-blogpost.html",
+    "final-classes/read-it.html",
+    "final-classes/i-am-not-talking-about-it.html",
 
     "outro/thanks.html"
 ]
