@@ -39,6 +39,10 @@
     "command-bus/command-bus.html",
     "command-bus/command-bus-executes.html",
 
+    "read-model/who-gives-us-the-data.html",
+    "read-model/read-model.html",
+    "read-model/read-model-read.html",
+
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
     "basic-cqrs/workflow/what-we-need.html",
