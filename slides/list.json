@@ -47,6 +47,8 @@
 
     "cqrs/cqrs.html",
     "cqrs/command-query-responsibility-segregation.html",
+    "cqrs/example/contract-controller.html",
+    "cqrs/example/contract-command-handler.html",
 
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
