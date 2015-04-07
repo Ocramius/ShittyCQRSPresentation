@@ -24,8 +24,10 @@
     "application-example/bad-example/contract-controller.html",
     "application-example/bad-example/contract-controller-stamp.html",
     "application-example/bad-example/terminating-a-contract-is-not-the-same-as-updating-it.html",
+
     "application-example/intent/our-code-does-not-express.html",
     "application-example/intent/intent.html",
+    "application-example/intent/how-do-we-code-intent.html",
 
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
