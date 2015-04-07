@@ -33,6 +33,7 @@
     "commands/examples/create-an-invoice.html",
     "commands/examples/give-me-a-beer.html",
     "commands/examples/make-me-a-sandwich.html",
+    "commands/commands-express-intent.html",
 
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
