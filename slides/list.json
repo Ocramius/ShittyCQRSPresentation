@@ -19,7 +19,12 @@
 
     "application-example/why-you-ask.html",
     "application-example/we-started-building-behavior-around-state.html",
-    "application-example/bad-example/controller.html",
+    "application-example/bad-example/invoice-controller.html",
+    "application-example/bad-example/creating-an-invoice-is-not-about-saving-it.html",
+    "application-example/bad-example/contract-controller.html",
+    "application-example/bad-example/terminating-a-contract-is-not-the-same-as-updating-it.html",
+    "application-example/intent/our-code-does-not-express.html",
+    "application-example/intent/intent.html",
 
     "outro/thanks.html"
 ]
