@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8" />
+    <title>Not only CQRS - A really ShittyCQRS</title>
+    <meta
+        name="description"
+        content="Not only CQRS - A really ShittyCQRS"
+    />
+    <meta name="author" content="Marco Pivetta" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme" />
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
+    <script>
+        document.write(
+            '<link rel="stylesheet" href="reveal.js/css/print/'
+            + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' )
+            + '.css" type="text/css" media="print">'
+        );
+    </script>
+    <!--[if lt IE 9]><script src="reveal.js/lib/js/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section style="visibility:hidden;"></section>
+<section>
+    <h2>
+        <img src="assets/img/ocramius.gif" alt="Marco Pivetta" style="height: 70px; margin: 0;"/>
+        <a href="http://ocramius.github.com/" target="_blank">Marco Pivetta</a>
+    </h2>
+</section>
+<section>
+    <h2>
+        <img src="assets/img/ocramius.gif" alt="Marco Pivetta" style="height: 70px; margin: 0;"/>
+        <a href="http://ocramius.github.com/" target="_blank">Ocramius</a>
+    </h2>
+</section>
+
+<section>
+    <h1>WHY?</h1>
+</section>
+<section>
+    <img src="assets/img/for-the-glory-of-satan.jpg" alt="For the glory of satan, of course!"/>
+</section>
+
+<section>
+    <h1>
+        <img
+                src="assets/img/cqrs.png"
+                alt="CQRS Explained" border="0"
+                style="margin-bottom: -50px; "
+                />
+
+    </h1>
+</section>
+
+<section>
+    <h1>How it's works?</h1>
+</section>
+
+<section>
+    <p>
+        <img src="assets/img/cqrs-diagram.png" alt=""/>
+    </p>
+</section>
+
+<section>
+    <h1>Commands</h1>
+
+    <ul>
+        <li class="fragment">Do something! <span class="fragment"><i>(But not)</i></span></li>
+    </ul>
+</section>
+
+<section>
+<pre><code>&lt;?php
+    // Commands Example
+
+    new RegisterUser('ocramius');
+    new RemoveUser('ocramius');
+    new RestoreUser('ocramius');</code></pre>
+</section>
+
+<section>
+    <h3>How commands look like?</h3>
+
+    <p></p>
+    <p></p>
+    <p class="fragment">POPO</p>
+    <p class="fragment">VO's</p>
+</section>
+
+<section>
+    <h1>Command Handler</h1>
+    <li class="fragment">Do something! <span class="fragment"><i>(Yeah)</i></span></li>
+</section>
+
+<section>
+<pre><code>&lt;?php
+    // Commands + Command Handler Example
+
+    $hanlder = new HandlerRegisterUser(
+        new RegisterUser('ocramius')
+    );</code></pre>
+</section>
+
+<section>
+    <h1>Manual Thing :(</h1>
+</section>
+
+
+<section>
+    <h2>Command Bus</h2>
+</section>
+
+<section>
+<pre><code>&lt;?php
+    // CommandsBus + Commands + Command Handlers Example
+
+    $handlers = [RegisterUser::class => HandlerRegisterUser::class];
+
+    $commandBus = new CommandBus($handlers);
+
+    $commandBus->push(new RegisterUser('ocramius'));</code></pre>
+</section>
+
+<section data-state="soothe">
+    <h2>Events!?</h2>
+</section>
+
+<section>
+    <h2>Shitthing CQRS!</h2>
+
+    <img src="assets/img/shit.jpg" alt=""/>
+</section>
+
+
+<section>
+    <h2>Show me the code <span class="fragment">running!</span></h2>
+</section>
+
+
+<section>
+    <h2>How ShittyCQRS works?</h2>
+</section>
+
+
+<section>
+    <h2>More stuff!</h2>
+    <p class="fragment">Works with <span class="doctrine-color">MongoDB ODM</span> too!</p>
+    <p class="fragment">
+        <span class="doctrine-color">CouchDB ODM</span> /
+        <span class="doctrine-color">PHPCR ODM</span> /
+        <span class="doctrine-color">OrientDB ODM</span>
+    </p>
+</section>
+
+<section>
+    <h2>Questions?</h2>
+</section>
+
+<section>
+    <h2>Fork it!</h2>
+    <p>
+        <img
+            src="assets/img/gh.svg"
+            alt="Doctrine2 ZF2 Introduction on Github"
+            height="50px"
+            style="margin: 0;"
+        />
+        <a href="https://github.com/Ocramius/doctrine2-zf2-introduction" target="_blank">
+            Ocramius/doctrine2-zf2-introduction
+        </a>
+    </p>
+</section>
+
+<section>
+    <h2>Thanks!</h2>
+</section>
+
+</div>
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.min.js"></script>
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15310667-1']);
+    _gaq.push(['_setDomainName', 'marco-pivetta.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
