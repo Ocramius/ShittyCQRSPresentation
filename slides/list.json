@@ -53,22 +53,10 @@
     "more/cqrs-has-more.html",
     "more/i-like-the-explicit-intent.html",
 
-    "basic-cqrs/intro.html",
-    "basic-cqrs/why-cqrs.html",
-    "basic-cqrs/workflow/what-we-need.html",
-    "basic-cqrs/workflow/command.html",
-    "basic-cqrs/workflow/example/command.html",
-    "basic-cqrs/workflow/note/command.html",
-    "basic-cqrs/workflow/command-handle.html",
-    "basic-cqrs/workflow/example/command-handle.html",
-    "basic-cqrs/workflow/note/command-handle.html",
-    "basic-cqrs/workflow/commandbus.html",
-    "basic-cqrs/workflow/example/commandbus.html",
-    "basic-cqrs/workflow/note/commandbus.html",
-    "basic-cqrs/crud-vs-command.html",
-
-    "shittycqrs/intro.html",
-    "shittycqrs/show-me-the-code.html",
+    "shittycqrs/oh.html",
+    "shittycqrs/wrote-a-thing.html",
+    "shittycqrs/shitty-cqrs.html",
+    "shittycqrs/demo-time.html",
 
     "outro/thanks.html"
 ]
