@@ -1,233 +1,843 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="utf-8" />
-    <title>Not only CQRS - A really ShittyCQRS</title>
-    <meta
-        name="description"
-        content="Not only CQRS - A really ShittyCQRS"
-    />
-    <meta name="author" content="Marco Pivetta" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="stylesheet" href="reveal.js/css/reveal.min.css" />
-    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme" />
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css" />
-    <script>
-        document.write(
-            '<link rel="stylesheet" href="reveal.js/css/print/'
-            + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' )
-            + '.css" type="text/css" media="print">'
-        );
-    </script>
-    <!--[if lt IE 9]><script src="reveal.js/lib/js/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-<div class="reveal">
-<div class="slides">
-
-<section style="visibility:hidden;"></section>
-<section>
-    <h2>
-        <img src="assets/img/ocramius.gif" alt="Marco Pivetta" style="height: 70px; margin: 0;"/>
-        <a href="http://ocramius.github.com/" target="_blank">Marco Pivetta</a>
-    </h2>
-</section>
-<section>
-    <h2>
-        <img src="assets/img/ocramius.gif" alt="Marco Pivetta" style="height: 70px; margin: 0;"/>
-        <a href="http://ocramius.github.com/" target="_blank">Ocramius</a>
-    </h2>
-</section>
-
-<section>
-    <h1>WHY?</h1>
-</section>
-<section>
-    <img src="assets/img/for-the-glory-of-satan.jpg" alt="For the glory of satan, of course!"/>
-</section>
-
-<section>
-    <h1>
-        <img
-                src="assets/img/cqrs.png"
-                alt="CQRS Explained" border="0"
-                style="margin-bottom: -50px; "
-                />
-
-    </h1>
-</section>
-
-<section>
-    <h1>How it's works?</h1>
-</section>
-
-<section>
-    <p>
-        <img src="assets/img/cqrs-diagram.png" alt=""/>
-    </p>
-</section>
-
-<section>
-    <h1>Commands</h1>
-
-    <ul>
-        <li class="fragment">Do something! <span class="fragment"><i>(But not)</i></span></li>
-    </ul>
-</section>
-
-<section>
-<pre><code>&lt;?php
-    // Commands Example
-
-    new RegisterUser('ocramius');
-    new RemoveUser('ocramius');
-    new RestoreUser('ocramius');</code></pre>
-</section>
-
-<section>
-    <h3>How commands look like?</h3>
-
-    <p></p>
-    <p></p>
-    <p class="fragment">POPO</p>
-    <p class="fragment">VO's</p>
-</section>
-
-<section>
-    <h1>Command Handler</h1>
-    <li class="fragment">Do something! <span class="fragment"><i>(Yeah)</i></span></li>
-</section>
-
-<section>
-<pre><code>&lt;?php
-    // Commands + Command Handler Example
-
-    $hanlder = new HandlerRegisterUser(
-        new RegisterUser('ocramius')
-    );</code></pre>
-</section>
-
-<section>
-    <h1>Manual Thing :(</h1>
-</section>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Doctrine ORM is Webscale</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css" id="highlight-theme">
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="bower_components/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                
+                    
+                        
+    <section data-html="slides/introduction/hi.html"></section>
 
 
-<section>
-    <h2>Command Bus</h2>
-</section>
-
-<section>
-<pre><code>&lt;?php
-    // CommandsBus + Commands + Command Handlers Example
-
-    $handlers = [RegisterUser::class => HandlerRegisterUser::class];
-
-    $commandBus = new CommandBus($handlers);
-
-    $commandBus->push(new RegisterUser('ocramius'));</code></pre>
-</section>
-
-<section data-state="soothe">
-    <h2>Events!?</h2>
-</section>
-
-<section>
-    <h2>Shitthing CQRS!</h2>
-
-    <img src="assets/img/shit.jpg" alt=""/>
-</section>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/my-name-is-marco.html"></section>
 
 
-<section>
-    <h2>Show me the code <span class="fragment">running!</span></h2>
-</section>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/roave.html"></section>
 
 
-<section>
-    <h2>How ShittyCQRS works?</h2>
-</section>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/i-contribute-to.html"></section>
 
 
-<section>
-    <h2>More stuff!</h2>
-    <p class="fragment">Works with <span class="doctrine-color">MongoDB ODM</span> too!</p>
-    <p class="fragment">
-        <span class="doctrine-color">CouchDB ODM</span> /
-        <span class="doctrine-color">PHPCR ODM</span> /
-        <span class="doctrine-color">OrientDB ODM</span>
-    </p>
-</section>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/thanks.html"></section>
 
-<section>
-    <h2>Questions?</h2>
-</section>
 
-<section>
-    <h2>Fork it!</h2>
-    <p>
-        <img
-            src="assets/img/gh.svg"
-            alt="Doctrine2 ZF2 Introduction on Github"
-            height="50px"
-            style="margin: 0;"
-        />
-        <a href="https://github.com/Ocramius/doctrine2-zf2-introduction" target="_blank">
-            Ocramius/doctrine2-zf2-introduction
-        </a>
-    </p>
-</section>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/questions.html"></section>
 
-<section>
-    <h2>Thanks!</h2>
-</section>
 
-</div>
-</div>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/are-you-fucking-kidding-me.html"></section>
 
-<script src="reveal.js/lib/js/head.min.js"></script>
-<script src="reveal.js/js/reveal.min.js"></script>
-<script>
 
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/introduction/just-kidding.html"></section>
 
-        theme: Reveal.getQueryHash().theme || 'sky', // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
 
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-            { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-            { src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-            { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-            { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-            { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-            // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-    });
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/doctrine-project/wth-is-doctrine.html"></section>
 
-</script>
-<script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-15310667-1']);
-    _gaq.push(['_setDomainName', 'marco-pivetta.com']);
-    _gaq.push(['_trackPageview']);
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/doctrine-project/doctrine-project.html"></section>
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
 
-</script>
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/doctrine-project/wth-is-doctrine-orm.html"></section>
 
-</body>
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/doctrine-project/doctrine-2-orm.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-explained.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-domain.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-domain-is-yours.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-domain-deal-with-it.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-doctrine2-deals-with-it.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/popo-enables-ddd.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/not-a-ddd-talk.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/designing-with-the-orm/more-on-ddd.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/entity-manager-api.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/entity-manager-api-pictured.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/persisting-an-invoice.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/invoice-data-structure.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/persisting-an-invoice-order.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/1-save-address-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/2-save-user-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/3-save-invoice-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/4-save-line-items-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/save-an-invoice-manually.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/1-save-address.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/2-save-user.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/3-save-invoice.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/4-save-line-items.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/order-of-operations-leads-to-bugs.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/example-persisting-an-invoice/with-the-orm.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orm-api/transaction-safety.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/orms-are-cool-but.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/orms-are-slow.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/there-i-said-it.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/or-are-the-developers-not-rtfm.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/abstraction-comes-at-a-cost.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/orms-are-leaky-abstractions.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/orms-are-leaky-abstractions-quote.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/an-api-for-every-use-case.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/drive-nail-with-screwdriver.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/php-double-claw.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/different-apis/pure-oop-api.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/different-apis/pure-oop-traversal.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/different-apis/criteria-api.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/different-apis/dql.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/different-apis/native-sql.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/you-also-need-to-know-how-the-orm-operates.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/orm-hydrates-and-extracts-data.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/popo-hydration-intro.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/popo-hydration.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/popo-extraction-intro.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/popo-extraction.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/everything-you-load-is-kept-in-memory.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/everything-you-load-is-kept-in-memory-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/everything-you-flush-checks-the-entire-uow.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/everything-you-flush-checks-the-entire-uow-image.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/only-one-object-per-id-in-memory.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/rules-of-the-orm/objects-are-in-valid-state.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/caching-intro.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/caching-at-the-core-of-design.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/4-caches.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/metadata-cache.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/query-cache.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/result-cache.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache-here-be-dragons.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/new-in-doctrine-2.5.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/super-hot.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/why-a-slc.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/what-is-a-slc.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/slc-in-modern-computers.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/slc-in-modern-computers-highlighted.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/slc-in-doctrine-orm.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/how-does-the-slc-work.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/assumptions.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/setting-up.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/cache-modes.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/cache-regions.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/demo-time.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/caching/second-level-cache/awesome-time.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/conclusion/conclusion-intro.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/conclusion/conclusion-doctrine-orm-is-webscale.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/bad-examples-recap.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/findall-filtering.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/findall-filtering-facepalm.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/findall-filtering-does-not-work.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/findall-filtering-you-had-one-job.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/bad-examples-know-the-tool.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/bad-examples/bad-examples-know-when-not-to-use-the-tool.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/orms-are-slow/orms-dont-kill-your-db-developers-do.html"></section>
+
+
+                    
+                    
+                
+                    
+                        
+    <section data-html="slides/outro/thanks.html"></section>
+
+
+                    
+                    
+                
+            </div>
+        </div>
+        <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+                transitionSpeed: 'fast',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'bower_components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    // { src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
+                ]
+            });
+        </script>
+    </body>
 </html>
