@@ -30,6 +30,7 @@
     "intent/how-do-we-code-intent.html",
 
     "commands/commands.html",
+    "commands/examples/create-an-invoice.html",
 
     "basic-cqrs/intro.html",
     "basic-cqrs/why-cqrs.html",
