@@ -34,6 +34,8 @@
     "commands/examples/give-me-a-beer.html",
     "commands/examples/make-me-a-sandwich.html",
     "commands/commands-express-intent.html",
+    "commands/commands-are-simple.html",
+    "commands/commands-are-value-objects.html",
 
     "command-bus/who-executes-commands.html",
     "command-bus/command-bus.html",
