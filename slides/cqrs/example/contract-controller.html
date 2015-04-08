@@ -5,7 +5,7 @@ class ContractController {
         // just do it!
         $commandBus(new TerminateContract($data['id']));
 
-        return $renderTemplate($contracts->findById($contractId));
+        return $renderTemplate($contracts->findById($data['id']));
     }
 }
 </code></pre>
