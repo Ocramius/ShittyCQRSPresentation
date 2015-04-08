@@ -2,7 +2,6 @@
 class ContractController {
     public function terminateContractAction()
     {
-        // just do it!
         $commandBus(new TerminateContract($data['id']));
 
         return $renderTemplate($contracts->findById($data['id']));
