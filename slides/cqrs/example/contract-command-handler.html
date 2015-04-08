@@ -4,6 +4,7 @@ $commandHandler = function (TerminateContract $terminate) use (...) {
 
     $contract->terminate();
 
+    $registerEvent(new ContractWasTerminated($contract->id));
     $save($contract);
 
     $commandBus(new SendCancellationNotifications($contract->id));
