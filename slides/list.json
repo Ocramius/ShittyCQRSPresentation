@@ -28,7 +28,7 @@
     "intent/how-do-we-code-intent.html",
 
     "commands/commands.html",
-    "commands/examples/create-an-invoice.html",
+    "commands/examples/terminate-contract.html",
     "commands/examples/give-me-a-beer.html",
     "commands/examples/make-me-a-sandwich.html",
     "commands/commands-express-intent.html",
