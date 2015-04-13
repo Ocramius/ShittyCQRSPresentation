@@ -2,4 +2,4 @@
 
 A shitty presentation for a shitty talk
 
-Can you see this presentation clicking [here](http://ocramius.github.io/ShittyCQRSPresentation).
+You can see this presentation at [http://ocramius.github.io/ShittyCQRSPresentation](http://ocramius.github.io/ShittyCQRSPresentation).
